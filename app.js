@@ -23,3 +23,24 @@ function actualizarAmigos() {
     nuevoAmigo.textContent = amigos[(amigos.length - 1)]; 
     listaAmigos.appendChild(nuevoAmigo);
 }
+
+function agregarElementoLi(id, contenido) {
+    let lista = document.getElementById(id);
+    let nuevoElemento = document.createElement('li');
+
+    nuevoElemento.textContent = contenido;
+    lista.appendChild(nuevoElemento);
+}
+
+function sortearAmigo() {
+
+    let numeroAmigos = amigos.length;
+
+    if (numeroAmigos === 0) {
+        alert('No tienes amigos en la lista');
+    } else {
+
+        let amigoSeccreto = amigos[Math.floor(Math.random() * numeroAmigos)];
+        agregarElementoLi('resultado', "Tú amigo secreto es: " + amigoSeccreto);
+    }
+}
